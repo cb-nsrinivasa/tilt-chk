@@ -16,11 +16,20 @@ jobs:
       - name: My first step
         uses: docker://alpine:3.18
         id: step1
-        run: echo "hello there" > "$CLOUDBEES_OUTPUTS/greeting"
+        run: |
+          echo "starting step1"
+          echo "step1" > "$CLOUDBEES_OUTPUTS/greeting"
+          sleep 5000
+          echo "finished step1"
       - name: My second step
         uses: docker://alpine:3.18
         id: step2
-        run: echo "from the hive" > "$CLOUDBEES_OUTPUTS/greeting"
+        run: |
+          echo "starting step2"
+          echo "step2" > "$CLOUDBEES_OUTPUTS/greeting"
+          sleep 5000
+          echo "finished step2"
+
   my-job-2:
     needs: my-job-1
     steps:
@@ -28,4 +37,7 @@ jobs:
           OUTPUT1: ${{needs.my-job-1.outputs.output1}}
           OUTPUT2: ${{needs.my-job-1.outputs.output2}}
         uses: docker://alpine:3.18
-        run: echo "$OUTPUT1 $OUTPUT2"
+        run: |
+          echo "$OUTPUT1 $OUTPUT2"
+          sleep 5000
+          echo "finished"
