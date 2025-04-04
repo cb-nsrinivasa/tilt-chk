@@ -40,4 +40,4 @@ jobs:
         run: |
           echo "$OUTPUT1 $OUTPUT2"
           sleep 500
-          echo "finished "
+          echo "finished"
