@@ -19,7 +19,7 @@ jobs:
         run: |
           echo "starting step1"
           echo "step1" > "$CLOUDBEES_OUTPUTS/greeting"
-          sleep 5000
+          sleep 500
           echo "finished step1"
       - name: My second step
         uses: docker://alpine:3.18
@@ -27,7 +27,7 @@ jobs:
         run: |
           echo "starting step2"
           echo "step2" > "$CLOUDBEES_OUTPUTS/greeting"
-          sleep 5000
+          sleep 500
           echo "finished step2"
 
   my-job-2:
@@ -39,5 +39,5 @@ jobs:
         uses: docker://alpine:3.18
         run: |
           echo "$OUTPUT1 $OUTPUT2"
-          sleep 5000
+          sleep 500
           echo "finished"
