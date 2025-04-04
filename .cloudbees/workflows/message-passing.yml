@@ -1,3 +1,12 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: message-passing
+
+on:
+  push:
+    branches:
+      - "**"
+      
 jobs:
   my-job-1:
     outputs:
