@@ -8,7 +8,7 @@ on:
       - "**"
       
 jobs:
-  my-job-1:
+  my-job:
     steps:
       - name: My first step
         uses: docker://alpine:3.18
