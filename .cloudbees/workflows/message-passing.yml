@@ -15,7 +15,6 @@ jobs:
         id: step1
         run: |
           echo "hello there" > "$CLOUDBEES_OUTPUTS/greeting"
-          echo "from the hive ${{steps.step1.outputs.greeting}}"
         
       - name: My second step
         uses: docker://alpine:3.18
